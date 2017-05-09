@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>乐播音乐首页</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="wrap" id="wrap">
+		<section class="logo">
+			<img src="http://static.lebo.baidu.com/st/i/XoghZj2b.jpg" alt="">
+		</section>
+		<div class="main">
+			<section class="mpin">
+				<h2><span>乐播频道</span></h2>
+				<div class="mp_cont" id="mp_cont">
+				</div>
+			</section>
+			<section class="mpin">
+				<h2><span>小编推荐</span></h2>
+				<div class="mp_tuwen" id="mp_tuwen">
+			</section>
+			<section class="mpin mapin_bot">
+				<h2><span>新进节目榜</span></h2>
+				<div class="mp_gemu" id="mp_gemu">
+			</section>
+			
+		</div>
+		<footer id="footer" class="footer">
+				<section  class="f_audio" id="f_audio">
+					<audio src="a.mp3" id="audio"></audio>
+					<p class="f_back" id="f_back"><span class="f_zou" id="f_zou"></span></p>
+					<dl>
+						<dt><img src=""></dt>
+						<dd>
+							<h3>DJ-舞曲</h3>
+							<h4>发生的实打实的是的发发生的发生的发生的生的发生的是</h4>
+						</dd>
+						<dd>
+							<span><b id="prev" class="fa fa-step-backward"></b></span>
+							<span><b id="ting" class="fa fa-play"></b></span>
+							<span><b id="next" class="fa fa-step-forward"></b></span>
+							<span><b id="list" class="fa fa-align-justify"></b></span>
+						</dd>
+					</dl>
+				</section>
+				<section class="f_table" id="f_table"></section>
+			</footer>
+	</div>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/duohang_ajax.js"></script>
+	<script src="js/tuwen_aiax.js"></script>
+	<script src="js/gumu_ajax.js"></script>
+	<script src="js/audio.js"></script>
+	<script type="text/javascript">
+		$("#wrap").Audios({
+			Name:{
+				prev:"#prev",
+				next:"#next",
+				audio:"audio",
+				f_back:"#f_back",
+				f_zou:"#f_zou",
+				mpge_bo:".mpge_bo",
+				mp_gemu:"#mp_gemu",
+				mpge_hui:".mpge_hui",
+				f_table:"#f_table",
+				list:"#list"
+			}
+		});
+
+		$.ajax({
+			url:"http://leboapi.baidu.com/leboapi/tag",
+			data:{
+				type:"getRootTagList",
+				edit:0,
+				apiver:2,
+				from:"lebowebapp",
+				terminal:"pcweb",
+				app:121
+			},
+			dataType:"jsonp",
+			success:function(data){
+				$("#wrap").Ajaxs({
+					Name:{
+						mp_cont:"#mp_cont"
+					},
+					Json:{
+						mp_json:data.data
+					}
+				})
+			}
+		})
+
+		$.ajax({
+			url:"http://leboapi.baidu.com/leboapi/business",
+			data:{
+				type:'getHotList',
+				limit:6,
+				args:'album.*,song.*,song.album.*,song.pic,tag,song.album.tag',
+				terminal:'android',
+				apiver:2,
+				from:'lebowebapp',
+				app:121
+			},
+			dataType:"jsonp",
+			success:function(data){
+
+				$("#wrap").Tuwens({
+					Name:{
+						mp_cont:"#mp_tuwen"
+					},
+					Json:{
+						mp_json:data.data
+					}
+				})
+			}
+		})
+
+
+		$.ajax({
+			url:"http://leboapi.baidu.com/leboapi/rank",
+			data:{
+				type:'getRanking',
+				rank_type:2,
+				args:'album.*,album.album_end, album.pic',
+				start:1,
+				limit:10,
+				apiver:2,
+				from:'lebowebapp',
+				terminal:'pcweb',
+				app:121
+			},
+			dataType:"jsonp",
+			success:function(data){
+				$("#wrap").Gemus({
+					Name:{
+						mp_cont:"#mp_gemu"
+					},
+					Json:{
+						mp_json:data.data
+					}
+				})
+			}
+		})
+
+	</script>
+</body>
+</html>

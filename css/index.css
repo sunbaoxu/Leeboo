@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none; }
+
+body, html, .wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+.wrap {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  position: relative;
+  box-sizing: border-box;
+  overflow: auto; }
+  .wrap .logo {
+    height: 188px;
+    overflow: hidden; }
+    .wrap .logo img {
+      width: 100%; }
+  .wrap .main {
+    -webkit-box-flex: 1;
+    padding: 0 10px; }
+    .wrap .main .mpin h2 {
+      height: 55px;
+      line-height: 55px; }
+      .wrap .main .mpin h2 span {
+        border-left: 3px solid #ff9900;
+        padding-left: 12px; }
+    .wrap .main .mpin .mp_cont ul {
+      display: -webkit-box; }
+      .wrap .main .mpin .mp_cont ul li {
+        background: #fff;
+        -webkit-box-flex: 1;
+        width: 0;
+        border: 1px solid #e8e8e8;
+        display: -webkit-box;
+        -webkit-box-align: center;
+        -webkit-box-pack: center;
+        height: 40px; }
+    .wrap .main .mpin .mp_tuwen ul {
+      display: -webkit-box;
+      box-sizing: border-box; }
+      .wrap .main .mpin .mp_tuwen ul li {
+        -webkit-box-flex: 1;
+        width: 0;
+        padding-right: 4px; }
+        .wrap .main .mpin .mp_tuwen ul li dl dt {
+          width: 100%;
+          border: 1px solid #ccc;
+          margin-bottom: 4px;
+          overflow: hidden; }
+          .wrap .main .mpin .mp_tuwen ul li dl dt img {
+            display: block;
+            width: 100%; }
+        .wrap .main .mpin .mp_tuwen ul li dl dd {
+          overflow: hidden;
+          -webkit-line-clamp: 2;
+          -webkit-overflow: ellipsis;
+          -webkit-box-orient: vertical;
+          display: -webkit-box; }
+          .wrap .main .mpin .mp_tuwen ul li dl dd:nth-child(2) {
+            margin-bottom: 6px;
+            height: 36px;
+            line-height: 18px;
+            font-size: 8px; }
+          .wrap .main .mpin .mp_tuwen ul li dl dd:last-child {
+            color: #ccc; }
+    .wrap .main .mpin .mp_gemu dl {
+      display: -webkit-box;
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid #ccc; }
+      .wrap .main .mpin .mp_gemu dl dt {
+        width: 80px;
+        height: 80px;
+        border: 1px solid #ccc;
+        position: relative; }
+        .wrap .main .mpin .mp_gemu dl dt .mpge_img {
+          width: 100%;
+          height: 100%; }
+        .wrap .main .mpin .mp_gemu dl dt .mpge_bo {
+          position: absolute;
+          width: 25px;
+          height: 25px;
+          bottom: 5px;
+          right: 5px; }
+      .wrap .main .mpin .mp_gemu dl dd {
+        -webkit-box-flex: 1;
+        padding: 0 10px; }
+        .wrap .main .mpin .mp_gemu dl dd h3 {
+          height: 20px;
+          line-height: 20px; }
+        .wrap .main .mpin .mp_gemu dl dd h4 {
+          font-size: 13px;
+          margin-top: 10px;
+          color: #999; }
+        .wrap .main .mpin .mp_gemu dl dd p {
+          margin-top: 10px;
+          width: 100%;
+          display: -webkit-box; }
+          .wrap .main .mpin .mp_gemu dl dd p span {
+            display: block;
+            font-size: 8px;
+            display: -webkit-box;
+            -webkit-box-align: center;
+            -webkit-box-pack: center;
+            padding: 2px 2px;
+            margin-right: 4px;
+            border-radius: 3px; }
+          .wrap .main .mpin .mp_gemu dl dd p .mpge_red {
+            color: #f60;
+            border: 1px solid #f60; }
+          .wrap .main .mpin .mp_gemu dl dd p .mpge_hui {
+            color: #ccc;
+            border: 1px solid #e2e2e2; }
+          .wrap .main .mpin .mp_gemu dl dd p .mpge_ren {
+            -webkit-box-flex: 1;
+            -webkit-box-pack: end; }
+            .wrap .main .mpin .mp_gemu dl dd p .mpge_ren i {
+              display: inline-block;
+              width: 10px;
+              height: 10px;
+              margin-right: 10px;
+              background: url("http://static.lebo.baidu.com/st/i/0iEyQnwT.png") no-repeat;
+              background-size: 615px 75px;
+              overflow: hidden;
+              background-position: -593px 0px; }
+
+#footer {
+  display: none; }
+
+.footer {
+  position: fixed;
+  background: #fff;
+  bottom: 0px;
+  z-index: 100;
+  width: 100%; }
+  .footer .f_audio {
+    height: 60px;
+    background: #fff;
+    -webkit-box-orient: vertical;
+    display: -webkit-box; }
+    .footer .f_audio p {
+      background: green;
+      height: 3px; }
+      .footer .f_audio p span {
+        display: block;
+        height: 100%;
+        background: red;
+        width: 0; }
+    .footer .f_audio dl {
+      -webkit-box-flex: 1;
+      display: -webkit-box;
+      padding-top: 10px; }
+      .footer .f_audio dl dt {
+        display: -webkit-box;
+        -webkit-box-align: center;
+        -webkit-box-pack: center;
+        height: 40px;
+        margin-right: 10px; }
+        .footer .f_audio dl dt img {
+          display: block;
+          width: 40px;
+          height: 100%;
+          background: green; }
+      .footer .f_audio dl dd {
+        -webkit-box-flex: 1;
+        display: -webkit-box;
+        -webkit-box-align: center;
+        width: 0; }
+        .footer .f_audio dl dd:last-child span {
+          -webkit-box-flex: 1;
+          width: 40px;
+          height: 100%;
+          display: block;
+          display: -webkit-box;
+          -webkit-box-pack: center;
+          -webkit-box-align: center; }
+          .footer .f_audio dl dd:last-child span b {
+            width: 16px;
+            height: 23px;
+            display: block; }
+        .footer .f_audio dl dd:nth-child(2) {
+          -webkit-box-orient: vertical; }
+          .footer .f_audio dl dd:nth-child(2) h3, .footer .f_audio dl dd:nth-child(2) h4 {
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+            text-overflow: ellipsis;
+            line-height: 20px; }
+          .footer .f_audio dl dd:nth-child(2) h4 {
+            font-size: 8px;
+            color: #ccc; }
+  .footer .f_table {
+    margin-top: 10px;
+    border-top: 1px solid #ccc; }
+    .footer .f_table ul {
+      width: 100%;
+      height: 300px;
+      overflow: auto; }
+      .footer .f_table ul li {
+        width: 100%;
+        display: -webkit-box;
+        line-height: 40px;
+        border-bottom: 1px dashed #ccc; }
+        .footer .f_table ul li b {
+          margin: 0 6px;
+          display: block;
+          width: 20px; }
+        .footer .f_table ul li span {
+          display: block;
+          width: 1px;
+          -webkit-box-flex: 1;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis; }
+      .footer .f_table ul li:hover {
+        background: red; }
+
+/*# sourceMappingURL=index.css.map */
